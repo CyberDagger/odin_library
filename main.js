@@ -1,4 +1,5 @@
 const listTarget = document.querySelector("#list");
+const buttonNewBook = document.querySelector("#btn-new");
 
 const myLibrary = [];
 
