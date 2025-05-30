@@ -1,5 +1,8 @@
 const listTarget = document.querySelector("#list");
 const buttonNewBook = document.querySelector("#btn-new");
+const buttonSubmit = document.querySelector("btn-submit-book");
+const buttonClose = document.querySelector("#btn-close-form");
+const submitForm = document.querySelector("#submit-form");
 
 const myLibrary = [];
 
@@ -41,6 +44,14 @@ function listBooks(library) {
         listTarget.appendChild(row);
     }
 }
+
+buttonNewBook.addEventListener("click", () => {
+    submitForm.showModal();
+})
+
+buttonClose.addEventListener("click", () => {
+    submitForm.close();
+})
 
 addBookToLibrary("The Adventures of Sherlock Holmes", "Arthur Conan Doyle");
 addBookToLibrary("Frankenstein", "Mary Shelley");
