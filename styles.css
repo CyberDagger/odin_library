@@ -24,3 +24,7 @@ table, td, th {
     width: 3.5rem;
     justify-self: center;
 }
+
+.delete {
+    background-color: red;
+}

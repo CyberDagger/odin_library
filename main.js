@@ -19,6 +19,9 @@ function addBookToLibrary(library, title, author) {
 }
 
 function listBooks(library) {
+    while (listTarget.firstChild) {
+        listTarget.removeChild(listTarget.lastChild);
+    }
     let header = document.createElement("tr");
     let headElement;
     headElement = document.createElement("th");
@@ -49,6 +52,13 @@ function listBooks(library) {
         rowElement = document.createElement("td");
         let delBtn = document.createElement("button");
         delBtn.textContent = "X";
+        delBtn.classList.add("delete");
+        delBtn.setAttribute("data-id", library[i].id);
+        delBtn.addEventListener("click", (event) => {
+            const index = library.map(i => i.id).indexOf(library[i].id);
+            library.splice(index, 1);
+            listBooks(library);
+        })
         rowElement.appendChild(delBtn);
         row.appendChild(rowElement);
         listTarget.appendChild(row);
@@ -67,9 +77,6 @@ buttonSubmit.addEventListener("click", (event) => {
     event.preventDefault();
     submitForm.close();
     addBookToLibrary(myLibrary, inputTitle.value, inputAuthor.value);
-    while (listTarget.firstChild) {
-        listTarget.removeChild(listTarget.lastChild);
-    }
     listBooks(myLibrary);
     inputTitle.value = "";
     inputAuthor.value = "";
