@@ -64,6 +64,7 @@ function listBooks(library) {
         rowElement = document.createElement("td");
         let readChk = document.createElement("input");
         readChk.setAttribute("type", "checkbox");
+        readChk.classList.add("read");
         readChk.setAttribute("data-id", library[i].id);
         if (library[i].read) {
             readChk.setAttribute("checked", "checked");
@@ -72,7 +73,8 @@ function listBooks(library) {
             const index = library.map(i => i.id).indexOf(library[i].id);
             library[i].toggleRead();
             listBooks(library);
-        })
+        });
+        rowElement.classList.add("centered");
         rowElement.appendChild(readChk);
         row.appendChild(rowElement);
         // Delete
@@ -85,7 +87,8 @@ function listBooks(library) {
             const index = library.map(i => i.id).indexOf(library[i].id);
             library.splice(index, 1);
             listBooks(library);
-        })
+        });
+        rowElement.classList.add("centered");
         rowElement.appendChild(delBtn);
         row.appendChild(rowElement);
 
