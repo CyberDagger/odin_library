@@ -68,10 +68,19 @@ table, td, th {
     color: white;
 }
 
+dialog {
+    margin: auto;
+    background-color: whitesmoke;
+}
+
+::backdrop {
+    backdrop-filter: blur(5px);
+}
+
 .form {
     display: grid;
     grid-template-columns: 3rem auto;
-    gap: 8px;
+    gap: 16px;
 }
 
 .form .buttons {
@@ -81,6 +90,6 @@ table, td, th {
 }
 
 .form button {
-    width: 3.5rem;
+    width: 4rem;
     justify-self: center;
 }
