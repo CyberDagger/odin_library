@@ -48,10 +48,12 @@ table {
 th {
     color: white;
     background-color: mediumslateblue;
+    padding: 0 0.5rem;
 }
 
 td {
     background-color: whitesmoke;
+    padding: 0 0.5rem;
 }
 
 table, td, th {
