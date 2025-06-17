@@ -23,19 +23,6 @@ class Book {
     }
 }
 
-/*
-function Book(title, author) {
-    this.id = crypto.randomUUID();
-    this.title = title;
-    this.author = author;
-    this.read = false;
-
-    this.toggleRead = function() {
-        this.read = !this.read;
-    }
-}
-    */
-
 function addBookToLibrary(library, title, author) {
     library.push(new Book(title, author));
 }
