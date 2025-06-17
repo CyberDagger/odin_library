@@ -8,6 +8,22 @@ const inputAuthor = document.querySelector("#author");
 
 const myLibrary = [];
 
+class Book {
+    constructor(title, author) {
+        this.id = crypto.randomUUID();
+        this.title = title;
+        this.author = author;
+        this.read = false;
+    }
+
+    
+
+    toggleRead() {
+        this.read = !this.read;
+    }
+}
+
+/*
 function Book(title, author) {
     this.id = crypto.randomUUID();
     this.title = title;
@@ -18,6 +34,7 @@ function Book(title, author) {
         this.read = !this.read;
     }
 }
+    */
 
 function addBookToLibrary(library, title, author) {
     library.push(new Book(title, author));
